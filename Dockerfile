@@ -1,13 +1,10 @@
 # Use an official Node.js runtime as a parent image
-FROM debian:stable-slim
-
-# Instalar Node.js y npm
-RUN apt-get update && apt-get install -y nodejs npm
+FROM node:22.1-bookworm-slim
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Copy package.json y package-lock.json al directorio de trabajo
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
 # Show current directory contents
